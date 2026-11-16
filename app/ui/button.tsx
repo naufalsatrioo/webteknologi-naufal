@@ -12,35 +12,26 @@ export function Button({
     <button
       {...rest}
       aria-disabled={ariaDisabled}
+      aria-busy={isPending}
       className={`relative flex h-11 items-center justify-center rounded-md bg-blue-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 aria-disabled:cursor-not-allowed aria-disabled:opacity-70 ${className}`}
     >
       {isPending ? (
-        <>
-          {/* Spinner */}
-          <svg
-            className="mr-2 h-4 w-4 animate-spin text-white"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <circle
-              className="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              strokeWidth="4"
-            />
-            <path
-              className="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
-            />
-          </svg>
-          <span>Memproses...</span>
-        </>
+        <span className="mr-2 inline-flex items-center gap-1" aria-hidden="true">
+          <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-white" />
+          <span
+            className="h-1.5 w-1.5 animate-bounce rounded-full bg-white"
+            style={{ animationDelay: '150ms' }}
+          />
+          <span
+            className="h-1.5 w-1.5 animate-bounce rounded-full bg-white"
+            style={{ animationDelay: '300ms' }}
+          />
+        </span>
       ) : (
         children
+      )}
+      {isPending && (
+        <span>Memproses...</span>
       )}
     </button>
   );

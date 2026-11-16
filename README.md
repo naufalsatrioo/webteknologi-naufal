@@ -81,7 +81,7 @@ flowchart LR
 | Login credentials dengan Auth.js | Tersedia, membutuhkan konfigurasi database |
 | Proteksi rute dashboard | Tersedia |
 | Dashboard, Customers, dan Invoices | Kerangka UI; belum terhubung ke data |
-| Transisi halaman dashboard | Hanya konten halaman yang bertransisi; navigasi tetap stabil |
+| Navigasi Dashboard, Invoices, dan Customers | Berpindah langsung tanpa animasi transisi |
 
 ## Teknologi
 
@@ -91,7 +91,6 @@ flowchart LR
 | Antarmuka | React 19, TypeScript, Tailwind CSS 4 |
 | Autentikasi | Auth.js Credentials, Zod, bcrypt |
 | Database | Vercel Postgres (`@vercel/postgres`) |
-| Animasi konten | Framer Motion |
 
 ## Struktur Proyek
 
@@ -100,14 +99,13 @@ app/
 ├── dashboard/
 │   ├── customers/page.tsx   # Kerangka halaman Customers
 │   ├── invoices/page.tsx    # Kerangka halaman Invoices
-│   ├── layout.tsx           # Navigasi bersama dan transisi konten
+│   ├── layout.tsx           # Navigasi bersama
 │   └── page.tsx             # Kerangka halaman Dashboard
 ├── lib/
 │   └── actions.ts           # Server Action untuk login
 ├── login/
 │   └── page.tsx             # Form login
 ├── ui/
-│   └── page-transition.tsx  # Animasi konten halaman
 ├── layout.tsx               # Root layout dan metadata
 └── page.tsx                 # Halaman utama
 auth.config.ts               # Aturan autentikasi dan akses rute

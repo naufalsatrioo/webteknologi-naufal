@@ -1,6 +1,5 @@
 import SideNav from '@/app/dashboard/sidenav';
 import Footer from '@/app/ui/footer';
-import PageTransition from '@/app/ui/page-transition';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className="flex min-h-screen min-w-0 flex-1 flex-col">
         <div className="flex-1 p-4 sm:p-6 md:p-8">
-          <PageTransition>{children}</PageTransition>
+          {children}
         </div>
         <Footer />
       </div>

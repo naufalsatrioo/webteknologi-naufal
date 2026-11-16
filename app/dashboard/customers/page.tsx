@@ -1,9 +1,7 @@
 export default function Page() {
   return (
-    <main className="p-4 md:p-6">
-      <div className="rounded-3xl bg-white/70 backdrop-blur-2xl border border-white/60 p-6 md:p-8 shadow-xl shadow-slate-200/40">
-        <p className="text-gray-900 font-medium">Customers Page</p>
-      </div>
+    <main>
+      <h1 className="text-2xl font-semibold text-slate-900">Customers</h1>
     </main>
   );
 }

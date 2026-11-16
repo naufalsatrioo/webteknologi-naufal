@@ -4,12 +4,12 @@ import PageTransition from '@/app/ui/page-transition';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col md:h-screen md:flex-row md:overflow-hidden">
-      <div className="w-full flex-none md:w-64">
+    <div className="flex min-h-screen flex-col md:flex-row">
+      <div className="w-full flex-none border-b border-slate-200 bg-white md:w-52 md:border-b-0 md:border-r">
         <SideNav />
       </div>
-      <div className="flex flex-col flex-grow md:overflow-y-auto">
-        <div className="flex-grow p-6 md:p-12">
+      <div className="flex min-h-screen min-w-0 flex-1 flex-col">
+        <div className="flex-1 p-4 sm:p-6 md:p-8">
           <PageTransition>{children}</PageTransition>
         </div>
         <Footer />

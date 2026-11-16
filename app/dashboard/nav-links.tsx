@@ -30,10 +30,10 @@ export default function NavLinks() {
           <Link
             key={link.name}
             href={link.href}
-            className={`flex h-[48px] grow items-center justify-center gap-2 rounded-xl p-3 text-sm font-medium backdrop-blur-md transition-all duration-200 md:flex-none md:justify-start md:p-2 md:px-3 active:scale-95 ${
+            className={`flex h-[48px] grow items-center justify-center gap-2 rounded-md border px-3 text-sm font-medium transition-colors md:flex-none md:justify-start ${
               isActive
-                ? 'bg-blue-500/15 text-blue-600 border border-blue-400/30 shadow-sm font-semibold'
-                : 'bg-white/60 text-gray-700 border border-white/60 hover:bg-white/90 hover:text-blue-600 hover:border-white/80 shadow-sm'
+                ? 'border-blue-100 bg-sky-100 text-blue-700'
+                : 'border-transparent bg-slate-50 text-slate-700 hover:bg-slate-100 hover:text-blue-700'
             }`}
           >
             <LinkIcon className="w-6 shrink-0" />
